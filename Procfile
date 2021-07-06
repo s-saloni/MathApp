@@ -1,1 +1,1 @@
-web: gunicorn MathPractice.wsgi
+web: gunicorn MathPractice.wsgi --log-file -

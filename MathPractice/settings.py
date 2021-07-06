@@ -26,10 +26,10 @@ SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', 'django-insecure-rla2wkpd%td+!2
 #SECRET_KEY = 'django-insecure-rla2wkpd%td+!2$q%jxmu-702-m%mbt#9tqe-ug&==w2z69odd'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 #DEBUG = os.environ.get('DJANGO_DEBUG', '') != 'False'
 
-ALLOWED_HOSTS = [] #added '*': host/domain names of site, when Debug is set to False
+ALLOWED_HOSTS = ['*'] #added '*': host/domain names of site, when Debug is set to False
 
 
 # Application definition
@@ -127,10 +127,13 @@ STATIC_URL = '/static/'
 
 # added below _DIRS and _ROOT
 STATICFILES_DIRS = [
-    (os.path.join(BASE_DIR, 'static')),
-    ]
+    str(BASE_DIR.joinpath('static')),
+]
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
