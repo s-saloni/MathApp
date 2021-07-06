@@ -9,7 +9,7 @@ function getGameOptions(){
     var urlParameters = new URLSearchParams(queryString);
     // if any of the param keys are not in the url (e.g. /game?t)
     if (urlParameters.length <= 11){
-        window.location.href = host + "/error";
+        window.location.href = host + "error";
         console.log("This is an invalid game. Please re-configure your options.");
         return;
     }
@@ -25,10 +25,10 @@ function getGameOptions(){
             missingParams += 't';
         }
         if (level=="") {
-            missingParams += '-lvl';
+            missingParams += 'lvl';
         } 
         if (operators=="") {
-            missingParams += '-ops';
+            missingParams += 'ops';
         }
         window.location.href = errorPath + "?missing=" + missingParams;
         console.log("This is an invalid game. Please re-configure your options. " + missingParams);
