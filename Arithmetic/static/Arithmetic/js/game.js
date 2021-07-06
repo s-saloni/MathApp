@@ -1,12 +1,15 @@
 
+
 function getGameOptions(){
+    var host = "https://math--practice.herokuapp.com/";
+    console.log(host);
     // https://www.sitepoint.com/get-url-parameters-with-javascript/
     var queryString = window.location.search;
     // get t, lvl and ops values
     var urlParameters = new URLSearchParams(queryString);
     // if any of the param keys are not in the url (e.g. /game?t)
     if (urlParameters.length <= 11){
-        window.location.href = "https://math--practice.herokuapp.com/error";
+        window.location.href = host + "/error";
         console.log("This is an invalid game. Please re-configure your options.");
         return;
     }
@@ -14,7 +17,7 @@ function getGameOptions(){
     var level = urlParameters.get('lvl');
     var operators = urlParameters.get('ops'); //first letter of each
     // if one of params is empty, send to error page
-    var errorPath = "https://math--practice.herokuapp.com/error";
+    var errorPath = host + "/error";
     var missingParams = "";
     if (time==="" || level==="" || operators===""){
         // check which param(s) are missing
