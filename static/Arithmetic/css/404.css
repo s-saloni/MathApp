@@ -45,3 +45,19 @@ body{
     -ms-user-select: none;
     -webkit-user-select: none;
 }
+
+
+/* Responsive changes for mobile phone screens */ 
+@media screen and (max-width: 900px) {
+    #title_btn{
+        font-size: 18vw;
+    }
+    #error{
+        margin: 3vw;
+        font-size: 21vw;
+    }
+    #oops{
+        margin: 5vw;
+        font-size: 6.5vw;
+    }
+}

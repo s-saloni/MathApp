@@ -31,7 +31,7 @@ input, p, label, form {
     margin-left: 25vw;
     margin-right: 25vw;
     text-align: center;
-    border: 2px solid #9BB7D4;
+    border: 4px solid #9BB7D4;
     border-radius: 15px;
     height: fit-content;
 }
@@ -61,6 +61,7 @@ input, p, label, form {
     text-align: center;
     padding: 0.2vw;
     color: #6c757d;
+    font-family: 'Bai Jamjuree', sans-serif;
 }
 #time_input:focus{
     /* no additional outline when typing in box */
@@ -107,3 +108,37 @@ input, p, label, form {
 
 
 
+
+/* Responsive changes for mobile phone screens */ 
+@media screen and (max-width: 900px) {
+    #title_btn{
+        font-size: 18vw;
+    }
+    .game_options_box{
+        margin: 3vw;
+        border: 2px solid #9BB7D4;
+        border-radius: 10px;
+        font-size: 5vw;
+    }
+    #game_options{
+        font-size: 7vw;
+        font-weight: 500;
+    }
+    #level_selector label {
+        font-size: 3.7vw !important;
+    }
+    #time_input{
+        font-size: 5vw !important;
+        width: 47vw;
+    }
+    ::placeholder{
+        font-size: 3.5vw;
+    }
+    .btn.btn-outline-primary{
+        font-size: 7vw;
+    }
+    .btn.btn-outline-secondary{
+        font-size: 3.3vw !important;
+        padding: 1vw !important;
+    }
+}
