@@ -17,7 +17,7 @@ function getGameOptions(){
     var level = urlParameters.get('lvl');
     var operators = urlParameters.get('ops'); //first letter of each
     // if one of params is empty, send to error page
-    var errorPath = host + "/error";
+    var errorPath = host + "error";
     var missingParams = "";
     if (time==="" || level==="" || operators===""){
         // check which param(s) are missing
@@ -38,6 +38,7 @@ function getGameOptions(){
         return [time, level, operators]
     }
 }
+
 
 function startTimer(){
     // get user input
