@@ -1,0 +1,93 @@
+body, button, input{
+    font-family: 'Bai Jamjuree', sans-serif;
+    color: #6c757d;
+}
+
+#title{
+    display: flex;
+    justify-content: center;
+}
+
+#title_btn{
+    font-family: 'VT323', monospace; 
+    font-size: 11vw; 
+    color: #9BB7D4; 
+    background-color: transparent;
+    border: none;
+    text-align: center;
+}
+#title_btn:hover{
+    cursor: pointer;
+    color: #6c757d;
+}
+
+
+#timer_score_Boxes{
+    display: flex;
+    margin: 3vw;
+    font-family: 'Bai Jamjuree', sans-serif;
+    color: #6c757d;
+}
+
+#timerBox, #scoreBox{
+    flex: 1;
+    padding: 1.5vw; 
+    font-size: 2vw;
+    text-align: center;
+    border: 2px solid #9BB7D4;
+    border-radius: 15px;
+}
+#timerBox {
+    margin-right: 60vw;
+}
+
+#questionBox{
+    border: 2px solid #9BB7D4;
+    border-radius: 15px;
+    padding: 2vw;    
+    margin-left: 20vw;
+    margin-right: 20vw;
+    display: flex;
+    justify-content: center;
+    font-size: 3vw;
+    text-align: center;
+}
+#input_answer{
+    outline: none;
+    border: 1px solid #6c757d;
+    border-radius: 10px;
+    width: 11vw;
+    font-size: 2.5vw;
+    text-align: center;
+}
+::placeholder{
+    font-size: 2.5vw;
+    text-align: center;
+}
+
+/* #check_btn */
+.btn.btn-outline-primary{
+    color: white !important;
+    background-color: #9BB7D4 !important;
+    border-color: #9BB7D4 !important;
+    box-shadow: 3px 3px 3px #dbdbdb !important;
+    border-radius: 15px !important;
+    font-size: 2vw;
+    font-family: 'VT323', monospace;
+}
+.btn.btn-outline-primary:hover{
+    background-color: #8ca7c5 !important;
+}
+
+
+/* problem display */
+#num1, #operator, #num2, #equals, #input_answer, #check_btn{
+    vertical-align: middle;
+    text-align: center;
+}
+
+#num1, #operator, #num2, #equals, #input_answer{
+    margin-right: 1vw;
+    font-family: 'Bai Jamjuree', sans-serif;
+    color: #6c757d;
+}

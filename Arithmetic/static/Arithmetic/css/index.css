@@ -1,0 +1,109 @@
+/* Main landing page stylesheet */
+
+body, h1,h2,h3 {
+    font-family: 'Bai Jamjuree', sans-serif;
+}
+
+input, p, label, form {
+    font-family: 'Bai Jamjuree', sans-serif;
+    font-size: 1.5vw !important;
+} 
+
+#title{
+    display: flex;
+    justify-content: center;
+}
+
+#title_btn{
+    font-family: 'VT323', monospace; 
+    font-size: 11vw; 
+    color: #9BB7D4; 
+    background-color: transparent;
+    border: none;
+    text-align: center;
+}
+#title_btn:hover{
+    cursor: pointer;
+    color: #6c757d;
+}
+
+.game_options_box{
+    margin-left: 25vw;
+    margin-right: 25vw;
+    text-align: center;
+    border: 2px solid #9BB7D4;
+    border-radius: 15px;
+    height: fit-content;
+}
+
+#game_options, #level_selector, #time_selector, #operator_selector, #start_btn {
+    color: #6c757d;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 1.5rem;
+}
+
+#level_selector label{
+    padding-left: 0.2em;
+    padding-right: 1em;
+}
+
+#game_options {
+    padding-top: 1.5vw;
+    font-size: 2vw;
+    font-weight: bold;
+}
+#time_input{
+    border: 1px solid #6c757d;
+    border-radius: 15px;
+    text-align: center;
+    padding: 0.2vw;
+    color: #6c757d;
+}
+#time_input:focus{
+    /* no additional outline when typing in box */
+    outline: none;
+}
+::placeholder{
+    color: #929496;
+    font-size: 1.3vw;
+    font-family: 'Bai Jamjuree', sans-serif;
+    text-align: center;
+}
+
+
+
+
+/* Start Game button */
+.btn.btn-outline-primary{
+    color: white !important;
+    background-color: #9BB7D4 !important;
+    border-color: #9BB7D4 !important;
+    box-shadow: 3px 3px 3px #dbdbdb !important;
+    border-radius: 15px !important;
+    padding: 1.1vw;
+    margin-top: 3vw;
+    font-size: 2.5vw;
+    font-family: 'VT323', monospace;
+}
+.btn.btn-outline-primary:hover, .btn.btn-outline-primary:focus {
+    color: white !important;
+    background-color: #8ca7c5 !important;
+    border-color: #8ca7c5 !important;
+}
+
+/* Operator buttons (colors when unchecked) */
+.btn.btn-outline-secondary{
+    padding: 0.5vw;
+    margin-right: 0.5em;
+    color: #cacaca;
+    background-color: white;
+    border-color: #cacaca;
+    border-radius: 15px !important;
+    box-shadow: 3px 3px 3px #dbdbdb;
+}
+
+
+

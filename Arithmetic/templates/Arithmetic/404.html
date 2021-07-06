@@ -1,0 +1,78 @@
+{% load static %}
+
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title> Math Practice - Error </title>
+        <link rel="stylesheet" type="text/css" href="{% static 'Arithmetic/css/404.css' %}">
+        <!-- Google fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Bai+Jamjuree:wght@400&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet"> 
+        <!-- Bootstrap -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">    </head>
+
+    <body onload="getError()">
+        <div id="title">
+            <button id="title_btn" onclick="location.href='https://math--practice.herokuapp.com/'">
+                Math Practice
+            </button>
+        </div>
+
+        <div id="error">
+            <div style="font-size: 15vw;">
+                404
+            </div>
+        </div>
+
+        <div id="oops">
+        </div>
+
+        <script>
+            function getError(){
+                var queryString = window.location.search;
+                var urlParams = new URLSearchParams(queryString);
+                var missingParams = urlParams.get('missing');
+                console.log(missingParams);
+                var errorMsg = "Oops, it looks like something went wrong.";
+                var missingOptions = [];
+                if (missingParams != null) { //if it is true (not empty)
+                    if (missingParams.includes('t')){
+                        missingOptions.push('time');
+                    }
+                    if (missingParams.includes('lvl')){
+                        missingOptions.push('level'); //will never be missing
+                    }
+                    if (missingParams.includes('ops')){
+                        missingOptions.push('operations');
+                    }
+
+                    //add to other file:
+                    if (missingParams.includes('t') || missingParams.includes('ops') || 
+                        missingParams.includes('lvl')) {
+                        var errorMissingMsg = "";
+                        for (i=0; i<missingOptions.length; i++){
+                            if (i>0){
+                                errorMissingMsg += " and ";
+                            }
+                            errorMissingMsg += missingOptions[i];
+                        }
+                        errorMsg = "Oops, it looks like you didn't input a selection for ";
+                        document.getElementById('oops').innerHTML = errorMsg + errorMissingMsg + ".";
+                    }
+                    else{ //different params found in query string
+                        document.getElementById('oops').innerHTML = errorMsg;
+                    }
+                }
+                else{ // no query string or any other path
+                    document.getElementById('oops').innerHTML = errorMsg;
+                }
+            }
+        </script>
+    </body>
+
+</html>

@@ -1,0 +1,1 @@
+web: gunicorn MathPractice.wgsi --log-file -

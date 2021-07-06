@@ -1,0 +1,63 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" type="text/css" href="{% static 'Arithmetic/css/game.css' %}">
+        <title>Math Practice</title>
+        <!-- Use Google fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Bai+Jamjuree:wght@400&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet"> 
+        <!-- Bootstrap -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    </head>
+
+
+    <body onload="startGame()">
+
+        <div id="title">
+            <button id="title_btn" onclick="location.href='https://math--practice.herokuapp.com/'">
+                Math Practice
+            </button>
+        </div>
+        
+        <div id="gameBox">
+            <div id="timer_score_Boxes">
+                <div id="timerBox">
+                    <div id="timer">
+                    </div>
+                </div>
+            
+                <div id="scoreBox">
+                    Score:
+                    <span id="score">0</span>
+                </div>
+            </div>
+
+            <div id="questionBox">
+                <span id="num1"> </span>
+                <span id="operator"> </span>
+                <span id="num2"> </span>
+                <span id="equals"> = </span>
+                <span>
+                    <input type="text" id="input_answer" placeholder="answer" autocomplete="off">
+                    <input class="btn btn-outline-primary" type="button" id="check_btn" value="Check" onclick="check()"/>
+                </span>
+            </div>
+
+        </div>
+
+        
+
+        <script src="{% static 'Arithmetic/js/game.js' %}"></script>
+    </body>
+
+
+
+</html>
+
+
