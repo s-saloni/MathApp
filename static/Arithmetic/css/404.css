@@ -20,17 +20,25 @@ body{
     color: #6c757d;
 }
 
+#oops{
+    color: #9BB7D4;
+    font-size: 2vw;
+    font-family: 'VT323', monospace; 
+    text-align: center;
+    margin-top: 3vh;
+    margin-bottom: 3vh;
+}
+
 #error{
     font-family: 'VT323', monospace; 
     color: white; 
     border: 2px solid #9BB7D4;
     border-radius: 15px;
-    padding: 2vw;    
+    font-size: 13vw;
     margin-left: 20vw;
     margin-right: 20vw;
     background-color: #9BB7D4; 
     text-align: center;
-    padding-bottom: 4vw;
     /* to disallow selecting text */
     user-select: none;
     -moz-user-select: none;
