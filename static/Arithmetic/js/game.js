@@ -44,9 +44,8 @@ function playAgain(){
 }
 
 function newGame(){
-    var homePage = window.location.protocol + window.location.host;
-    console.log(homePage);
-    window.location.replace(homePage);
+    //var homePage = window.location.protocol + window.location.host;
+    window.location.replace("https://math--practice.herokuapp.com/");
 }
 
 function startTimer(){
