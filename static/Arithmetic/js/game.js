@@ -2,7 +2,6 @@
 
 function getGameOptions(){
     var host = "https://math--practice.herokuapp.com/";
-    console.log(host);
     // https://www.sitepoint.com/get-url-parameters-with-javascript/
     var queryString = window.location.search;
     // get t, lvl and ops values
@@ -35,10 +34,20 @@ function getGameOptions(){
     }
     
     else {
-        return [time, level, operators]
+        return [time, level, operators];
     }
 }
 
+function playAgain(){
+    // reload page
+    window.location.reload();
+}
+
+function newGame(){
+    var homePage = window.location.protocol + window.location.host;
+    console.log(homePage);
+    window.location.replace(homePage);
+}
 
 function startTimer(){
     // get user input
@@ -80,6 +89,16 @@ function startTimer(){
             //console.log("Time is up.")
             document.getElementById('timerBox').innerHTML = "Game Finished";
             document.getElementById('questionBox').style.display = 'none';
+            document.getElementById('gameOver').style.display = 'flex';
+            /*
+            var currentGame = window.location.href;
+            var host = "https://math--practice.herokuapp.com/";
+            var gameOverMsg = `<a href=${currentGame}>Play again </a> \
+                <p> or set up a </p>\
+                <a href=${host}> new game.</a>`;
+
+            document.getElementById('questionBox').innerHTML = gameOverMsg;
+            */
             clearInterval(timer);
         }
     },1000);
@@ -182,7 +201,7 @@ function check(){
         document.getElementById('input_answer').value = ''; //clear input box
         getProblem();
         // after fixing an incorrect answer
-        document.getElementById('input_answer').style.color= "black";
+        document.getElementById('input_answer').style.color= "#6c757d";
         score++;
         document.getElementById('score').innerHTML = score;
     }
