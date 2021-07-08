@@ -17,6 +17,12 @@ function getGameOptions(){
     var operators = urlParameters.get('ops'); //first letter of each
     // if one of params is empty, send to error page
     var errorPath = host + "error";
+    
+    // if minutes input is not a number, send to error page
+    if (isNaN(time)){
+        window.location.href = errorPath + "?missing=t";
+    }
+
     var missingParams = "";
     if (time==="" || level==="" || operators===""){
         // check which param(s) are missing
@@ -118,19 +124,19 @@ function getRandomInt(){
     var level = getGameOptions()[1];
     // pick larger numbers to increase difficulty for levels
     if (level==="easy"){
-        var a = Math.floor(Math.random()*100) + 1;
+        var a = Math.floor(Math.random()*10) + 1;
     }
     else if (level==="medium"){
-        var a = Math.floor(Math.random()*1000) + 1;
+        var a = Math.floor(Math.random()*100) + 1;
     }
     else if (level==="hard"){
+        var a = Math.floor(Math.random()*1000) + 1;
+    }
+    
+    else if (level==="veryhard"){
         var a = Math.floor(Math.random()*10000) + 1;
     }
-    /*
-    else if (level==="veryhard"){
-        var a = Math.floor(Math.random()*100000) + 1;
-    }
-    */
+    
     // return random single integer
     return a;
 }
