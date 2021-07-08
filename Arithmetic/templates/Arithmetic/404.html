@@ -36,33 +36,33 @@
             function getError(){
                 var queryString = window.location.search;
                 var urlParams = new URLSearchParams(queryString);
-                var missingParams = urlParams.get('missing');
-                console.log(missingParams);
+                var errorParams = urlParams.get('error');
+                //console.log(errorParams);
                 var errorMsg = "Oops, it looks like something went wrong.";
-                var missingOptions = [];
-                if (missingParams != null) { //if it is true (not empty)
-                    if (missingParams.includes('t')){
-                        missingOptions.push('time');
+                var errors = [];
+                if (errorParams != null) { //if it is true (not empty)
+                    if (errorParams.includes('t')){
+                        errors.push('time');
                     }
-                    if (missingParams.includes('lvl')){
-                        missingOptions.push('level'); //will never be missing
+                    if (errorParams.includes('lvl')){
+                        errors.push('level'); //will never be missing
                     }
-                    if (missingParams.includes('ops')){
-                        missingOptions.push('operations');
+                    if (errorParams.includes('ops')){
+                        errors.push('operations');
                     }
 
                     //add to other file:
-                    if (missingParams.includes('t') || missingParams.includes('ops') || 
-                        missingParams.includes('lvl')) {
-                        var errorMissingMsg = "";
-                        for (i=0; i<missingOptions.length; i++){
+                    if (errorParams.includes('t') || errorParams.includes('ops') || 
+                        errorParams.includes('lvl')) {
+                        var errorsMsg = "";
+                        for (i=0; i<errors.length; i++){
                             if (i>0){
-                                errorMissingMsg += " and ";
+                                errorsMsg += " and ";
                             }
-                            errorMissingMsg += missingOptions[i];
+                            errorsMsg += errors[i];
                         }
-                        errorMsg = "Oops, it looks like you didn't correctly input a selection for ";
-                        document.getElementById('oops').innerHTML = errorMsg + errorMissingMsg + ".";
+                        var msg = "Oops, it looks like you didn't correctly input a selection for ";
+                        document.getElementById('oops').innerHTML = msg + errorsMsg + ".";
                     }
                     else{ //different params found in query string
                         document.getElementById('oops').innerHTML = errorMsg;
