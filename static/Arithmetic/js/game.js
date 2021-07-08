@@ -130,6 +130,11 @@ function getProblem(){
     }
     // choose random operator
     var op = ops[Math.floor( Math.random()*ops.length )];
+    // for division, ensure a is divisible by b
+    if (op==='&#247;'){
+        // and result is always an integer
+        a = a * b;
+    }
 
     // Display: a [operator] b =
     document.getElementById("num1").textContent = a;
